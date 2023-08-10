@@ -1,0 +1,67 @@
+{
+	"height":	30,
+    "position": "top",
+	"layer":	"top",
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["network", "pulseaudio", "battery", "clock", "tray"],
+
+    "wlr/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "sort-by-numbers": false,
+      "format-icons": {
+          "default": "󰝦",
+          "active": "󰝥",
+          "urgent": "󰀨"
+      }
+    },
+
+	"custom/spotify": {
+		"format": "<span size='12000' foreground='#9ccfd8'>󰓇 </span><span>{}</span>",
+        "interval": 1,
+        "exec-if": "pgrep spotify",
+        "tooltip": false,
+        "max-length": 60,
+        "exec": "/home/shved/.local/bin/spotify.sh"
+	},
+
+	"network": {
+		"format-wifi": "<span size='11000' foreground='#ebbcba'>󰤨  </span>{essid}",
+        "format-disconnected": "<span size='11000' foreground='#ebbcba'>󰤭  </span>Disconnected",
+        "on-click": "~/.config/rofi/launchers/wifi/launch.sh"
+	},
+
+	"pulseaudio": {
+		"format": "<span size='11000' foreground='#f6c177'>{icon} </span>{volume}%",
+		"format-muted": "<span size='11000' foreground='#f6c177'>  </span> Muted",
+		"format-icons": {
+			"default": [ " " ]
+		}
+	},
+
+
+	"battery": {
+		"states": {
+			"warning": 20,
+			"critical": 10
+			},
+			"format": "<span size='11000' foreground='#9ccfd8'>{icon} </span>{capacity}%",
+			"format-warning": "<span size='11000' foreground='#f6c177'>{icon} </span>{capacity}%",
+			"format-critical": "<span size='11000' foreground='#eb6f92'>{icon} </span>{capacity}%",
+			"format-icons": [" ", " ", " ,", " ", " "],
+			// "format-icons": [ "󰂎", "󰁻", "󰁽", "󰂀", "󰁹" ],
+			"tooltip-format": "{time}"
+	},
+
+	"clock": {
+		"format": "<span size='11000' foreground='#c4a7e7'>  </span>{:%a %d %H:%M}"
+	},
+
+	"tray": {
+		"spacing": 7
+	}
+
+}
+
+// vim:ft=jsonc

@@ -1,0 +1,40 @@
+# == Classic ==
+# This is a shorthand to override some of the options to be backwards compatible
+# with `ls`. It affects the "color"->"when", "sorting"->"dir-grouping", "date"
+# and "icons"->"when" options.
+# Possible values: false, true
+classic: false
+
+blocks:
+  - permission
+  - size
+  - user
+  - date
+  - name
+
+# == Color ==
+# This has various color options. (Will be expanded in the future.)
+color:
+  # When to colorize the output.
+  # When "classic" is set, this is set to "never".
+  # Possible values: never, auto, always
+  when: always
+  # How to colorize the output.
+  # When "classic" is set, this is set to "no-color".
+  # Possible values: default, <theme-file-name>
+  # when specifying <theme-file-name>, lsd will look up theme file
+  # XDG Base Directory if relative, e.g. ~/.config/lsd/themes/<theme-file-name>.yaml,
+  # The file path if absolute
+  theme: dracula
+
+# == Date ==
+# accepts a strftime like string.
+# When "classic" is set, this is set to "date".
+# Possible values: date, relative, '+<date_format>'
+# `date_format` will be a `strftime` formatted value. e.g. `date: '+%d %b %y %X'` will give you a date like this: 17 Jun 21 20:14:55
+date: '+%d %b %y %X'
+
+# == Size ==
+# Specifies the format of the size column.
+# Possible values: default, short, bytes
+size: short

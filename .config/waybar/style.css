@@ -1,0 +1,131 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono nerd font;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #bd93f9;
+}
+
+tooltip {
+    background: #282a36;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #282a36;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #44475a;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: #bd93f9;
+}
+
+#workspaces button.focused {
+    color: #f1fa8c;
+    background: #282a36;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: #bd93f9;
+    background: #982a36;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #21222c;
+    color: #bd93f9;
+    border-radius: 10px;
+}
+
+
+#window,
+#clock,
+#battery,
+#temperature,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#workspaces,
+#tray,
+#backlight {
+    background: #282a36;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 1px solid #44475a;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#workspaces {
+    background: #282a36;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+
+
+#window {
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#clock {
+    color: #bd93f9;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#temperature {
+    color: #ff6e6e;
+    border-radius: 10px 0 0 10px;
+    border-right: 0px;
+    margin-right: 0px;
+}
+
+#memory {
+    color: #8be9fd;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 10px;
+}
+
+
+#network {
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+#pulseaudio {
+    color: #bd93f9;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 10px;
+}
+
+#battery {
+    color: #69ff94;
+    border-radius: 0 10px 10px 0;
+    margin-right: 10px;
+    border-left: 0px;
+}
+
