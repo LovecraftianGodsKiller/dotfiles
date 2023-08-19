@@ -10,7 +10,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Remove and rename filez modified by Oh-My-Zsh
 ```
-rm ~/.zshrc && mv ~/.zshrc-pre-oh-my-zsh ~/.zshrc
+rm ~/.zshrc && mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+```
 
 Install antigen (my zsh plugin manager of choice)
 ```
