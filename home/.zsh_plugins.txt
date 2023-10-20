@@ -1,0 +1,4 @@
+romkatv/powerlevel10k
+zsh-users/zsh-autosuggestions
+zdharma-continuum/history-search-multi-word
+zdharma-continuum/fast-syntax-highlighting
