@@ -1,0 +1,4 @@
+https://raw.githubusercontent.com/Gl00ria/dotfiles/main/dot_hyprland/.config/wlogout/style.css
+https://raw.githubusercontent.com/Gl00ria/dotfiles/main/dot_hyprland/.config/wlogout/actions.css
+https://raw.githubusercontent.com/Gl00ria/dotfiles/main/dot_hyprland/.config/wlogout/launch.sh
+https://raw.githubusercontent.com/Gl00ria/dotfiles/main/dot_hyprland/.config/wlogout/layout

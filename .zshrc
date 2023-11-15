@@ -2,14 +2,40 @@ neofetch
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+######
+# zgen plugin manager
+######
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+# if the init script doesn't exist
+if ! zgen saved; then
+
+  # specify plugins here
+  zgen oh-my-zsh
+
+  # generate the init script from plugins above
+  zgen save
+fi
+
+# plugins
+zgen load romkatv/powerlevel10k powerlevel10k       # prompt
+
+# put rest of plugins here
+
+# core plugins
+zgen load zsh-users/zsh-autosuggestions                             # auto suggestions
+zgen load zdharma-continuum/fast-syntax-highlighting      # history search
+zgen load zdharma-continuum/fast-syntax-highlighting                # syntax hilighting
+
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 ### Antidote plugin manager
-source $HOME/.antidote/antidote.zsh
+# source $HOME/.antidote/antidote.zsh
 
 ### load antidote plugins
-antidote load
+# antidote load
 
 # Antigen external plugins
 # antigen bundle zsh-users/zsh-autosuggestions
@@ -90,7 +116,7 @@ antidote load
 # Add wisely, as too many plugins slow down shell startup.
 ### plugins=(git zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -148,22 +174,11 @@ alias poff='poweroff'
 alias spoff='sudo poweroff'
 alias supoff='sudo poweroff'
 alias nf='neofetch'
+alias clone='git clone'
 alias dbox='distrobox'
 alias da='+%Y-%m-%d %A %T %Z'
 alias a2c='aria2c'
 alias ac='aria2c'
-
-# git
-alias gc='git clone'
-alias clone='git clone'
-alias gco='git commit'
-alias commit='git commit'
-alias gp='git push'
-alias push='git push'
-alias gm='git merge'
-alias merge='git merge'
-alias gi='git init'
-alias init='git init'
 
 # Changing directories
 alias cddown='cd /home/kirb/Downloads'
@@ -179,10 +194,10 @@ alias .....='cd ../../../..'
 alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Changing 'ls' to 'lsd'
-alias l='eza -alFh --color=always --icons --group-directories-first' # my preferred listing
-alias ls='eza -alFh --color=always --icons --group-directories-first' # my preferred listing
-alias lt='eza -alFhT --color=always --icons --group-directories-first' # my preferred tree listing
-alias lst='eza -alFhT --color=always --icons --group-directories-first' # my preferred tree listing
+alias l='eza -alFh --color=always --group-directories-first --icons' # my preferred listing
+alias ls='eza -alFh --color=always --group-directories-first --icons' # my preferred listing
+alias lt='eza -alFhT --color=always --group-directories-first --icons' # my preferred listing
+alias lst='eza -alFhT --color=always --group-directories-first --icons' # my preferred listing
 # alias la='lsd -a --color=always --group-directories-first'  # all files and dirs
 # alias ll='lsd -l --color=always --group-directories-first'  # long format
 # alias lt='lsd -alFh --color=always --group-directories-first --tree --header --hyperlink auto' # tree listing
@@ -210,22 +225,13 @@ alias pacsyu='sudo pacman -Syu'                  # update only standardp pkgs
 alias parsua='paru -Sua --skipreview'            # update only AUR pkgs (paru)
 alias parusua='paru -Sua --skipreview'           # update only AUR pkgs (paru)
 alias yaysua='paru -Sua --skipreview'            # update only AUR pkgs (paru)
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages & unused dependencies
+alias pacsearch='pacman -Ss'
+alias parsearch='paru -Ss'
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages/remove unused dependencies
 alias paccache='sudo pacman -Scc'                # clean standard pkg cache
 alias parcache='paru -Scc'                       # clean standard and aur pkg cahce
 alias parucache='paru -Scc'                      # clean standard and aur pkg cache
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
-
-# dnf and rpm
-alias dnfin='sudo dnf install'                   # install package(s) from repo(s)
-alias dnfre='sudo dnf remove'                    # remove package(s) with their
-alias dnfup='sudo dnf upgrade'                   # update all installed pkgs
-alias dnfupd='sudo dnf upgrade'                  # update all installed pkgs
-alias dnfupg='sudo dnf upgrade'                  # update all installed pkgs
-alias rpmin='sudo rpm -i'                        # install pkg from rpm file
-alias dnfautoremove='sudo dnf autoremove'        # remove orphaned packages & unused dependencies
-alias cleandb='sudo dnf clean-dbcache'           # clean dnf cached metadata
-alias cleanall='sudo dnf clean all'              # clean all dnf cached data
 
 # fix obvious typos
 alias cd..='cd ..'
@@ -258,9 +264,9 @@ alias nalain='nala install'
 alias nalare='nala remove'
 alias nalaupd='nala update'
 alias nalaupd='nala upgrade'
-alias termux-repos='termux-change-repo'
-alias termux-settings='termux-reload-settings'
-alias termux-storage='termux-setup-storage'
+# alias changerepo='termux-change-repo'
+# alias reloadsettings='termux-reload-settings'
+# alias storage='termux-setup-storage'
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
@@ -289,6 +295,14 @@ ex ()
   fi
 }
 
+# dnf and rpm
+alias dnfin='sudo dnf install'
+alias dnfre='sudo dnf remove'
+alias dnfup='sudo dnf upgrade'
+alias dnfupd='sudo dnf upgrade'
+alias dnfupg='sudo dnf upgrade'
+alias rpmin='sudo rpm -i'
+
 # Enabling Micro True color for color schemes
 export MICRO_TRUECOLOR=1
 
@@ -296,10 +310,8 @@ export MICRO_TRUECOLOR=1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=$PATH:/home/kirb/.spicetify
 
-# export PATH=$PATH:/home/kirb/.local/bin
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/home/kirb/.local/bin
 
 export XDG_CONFIG_HOME="${HOME}/.config"
 
-# export $XDG_SESSION_TYPE=wayland
-
+export $XDG_SESSION_TYPE=wayland
