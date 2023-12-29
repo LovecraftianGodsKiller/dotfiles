@@ -138,18 +138,18 @@ alias commit='git commit'
 alias push='git push'
 
 # pacman and paru
-alias pacin='sudo pacman -S'				# install package(s) from repos
+alias pacin='pacman -S'				# install package(s) from repos
 alias parin='paru -S --skipreview'			# isntall package(s) from aur
-alias pacre='sudo pacman -Rns'				# remove package, all dependencies and its configuration files
+alias pacre='pacman -Rns'				# remove package, all dependencies and its configuration files
 alias parre='paru -Rns --skipreview'			# remove package, all dependecnies and its configuration files
 alias pacss='pacman -Ss'				# search repos for package
 alias parss='paru -Ss --skipreview'			# search aur for package
 alias parsua='paru -Sua --skipreview'			# update only aur packages
 alias aurup='paru -Sua --skipreview'			# update only aur packages
-alias pacscc='sudo pacman -Scc'				# clean standard package cache
+alias pacscc='pacman -Scc'				# clean standard package cache
 alias parscc='paru -Scc'				# clean standard and aur package cache
 alias unlock='sudo rm /var/lib/pacman/db.lck'		# remove pacman lock
-alias cleanup='sudo pacman -S -Rns $(pacman -Qtdq)'	# remove orphaned packages (orphaned packages a.k.a. unused dependecies)
+alias cleanup='pacman -S -Rns $(pacman -Qtdq)'	# remove orphaned packages (orphaned packages a.k.a. unused dependecies)
 
 # remove a directory and all files
 alias rmd='rm --recursive --force --verbose'

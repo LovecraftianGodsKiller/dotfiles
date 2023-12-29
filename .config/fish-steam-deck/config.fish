@@ -1,4 +1,5 @@
-﻿## Source from conf.d before our fish config
+﻿fish_add_path -g $HOME/.local/bin
+## Source from conf.d before our fish config
 source $HOME/.config/fish/conf.d/done.fish
 
 ## Set values
