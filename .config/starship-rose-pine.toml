@@ -3,8 +3,8 @@
 #  $character
 # """
 format = """
-$username$directory[](fg:#313244 bg:#1e1e2e)$fill[](fg:#313244 bg:#1e1e2e)[ ](bg:#313244)$status[ ](bg:#313244)$git_branch$git_status$memory_usage$time
-$character
+ $username$directory[](fg:#26233a bg:#191724)$fill[](fg:#26233a bg:#191724)[ ](bg:#26233a)$status[ ](bg:#26233a)$git_branch$git_status$memory_usage$time
+ $character
 """
 
 add_newline = true
@@ -27,7 +27,7 @@ disabled = false
 
 [time]
 # format = '[](fg:#e0def4 bg:#191724)[](fg:#908caa bg:#e0def4)[](fg:#6e6a86 bg:#908caa)[](fg:#26233a bg:#6e6a86)[ \[$time\] ](fg:#e0def4 bg:#26233a)'
-format = '[](fg:#fab387 bg:#313244)[ \[$time\] ](fg:#fab387 bg:#313244)'
+format = '[](fg:#f6c177 bg:#26233a)[ \[$time\] ](fg:#f6c177 bg:#26233a)'
 utc_time_offset = "local"
 time_format = "%H:%M:%S"
 disabled = false
@@ -41,7 +41,7 @@ style = "fg:#e0def4"
 
 [git_branch]
 # format = "[ ](fg:#e0def4 bg:#26233a)[$symbol](fg:#e0def4 bg:#26233a)[$branch](fg:#e0def4 bg:#26233a)[](fg:#26233a bg:#26233a)"
-format = "[ ](fg:#94e2d5 bg:#313244)[ ](fg:#94e2d5 bg:#313244)[$branch](fg:#94e2d5 bg:#313244)"
+format = "[ ](fg:#9ccfd8 bg:#26233a)[ ](fg:#9ccfd8 bg:#26233a)[$branch](fg:#9ccfd8 bg:#26233a)"
 symbol = " "
 
 [shell]
@@ -59,21 +59,19 @@ disabled = true
 [directory]
 # format = "[ 󰣇 ](fg:#e0def4 bg:#28233a)[ ](fg:#e0def4 bg:#26233a)[$path ]($style)[$read_only](fg:#e0def4 bg:#26233a)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
 # format = "[  ](fg:#e0def4 bg:#26233a)[ ](fg:#e0def4 bg:#26233a)[$path ]($style)[$read_only](fg:#e0def4 bg:#26233a)[](fg:#26233a bg:#6e6a86)[](fg:#6e6a86 bg:#908caa)[](fg:#908caa bg:#e0def4)[](fg:e0def4 bg:#181724)"
-format = "[ 󰣇 ](fg:#89b4fa bg:#313244)[[ ](fg:#89b4fa bg:#313244)$path ]($style)[$read_only](fg:#89b4fa bg:#313244)"
-#format = "[  ](fg:#89b4fa bg:#313244)[[ ](fg:#89b4fa bg:#313244)$path ]($style)[$read_only](fg:#89b4fa bg:#313244)"
+format = "[  ](fg:#9ccfd8 bg:#26233a)[[ ](fg:#9ccfd8 bg:#26233a)$path ]($style)[$read_only](fg:#e0def4 bg:#26233a)"
 # format = "[ _ ](fg:#cdd9f4 bg:#313244)[ ](fg:#cdd6f4 bg:#313244)[$path ]($style)[$read_only](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
 # style = "fg:#e0def4 bg:#26233a"
-style = "fg:#89d4fa bg:#313244"
+style = "fg:#9ccfd8 bg:#26233a"
 truncation_symbol = " "
 truncate_to_repo = false
 truncation_length = 100
 # home_symbol = "  "
 home_symbol = "~"
-read_only = " "
 
 [git_status]
 # format = '([\[$all_status $ahead_behind \] ](fg:#e0def4 bg:#26233a))'
-format = '(fg:#94e2d5 bg:#313244)([\[$modified $untracked\] ](fg:#94e2d5 bg:#313244))'
+format = '(fg:#9ccfd8 bg:#26233a)([\[$modified $untracked\] ](fg:#e0def4 bg:#26233a))'
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}'
 behind = '⇣${count}'
@@ -83,14 +81,14 @@ untracked = '?${count}'
 [username]
 # format = "[](fg:#6e6a86 bg:#191724)[](fg:#908caa bg:#6e6a86)[](fg:#e0def4 bg:#908caa)[ ](fg:#26233a bg:#e0def4 bold)[](fg:#e0def4 bg:#908caa)[](fg:#908caa bg:#6e6a86)[](fg:#6e6a86 bg:#26233a)"
 format = '[$user]($style)'
-style_user = "fg:#cba6f7 bg:#313244"
-style_root = "fg:#f38ba8 bg:#313244"
+style_user = "fg:#c4a7e7 bg:#26233a"
+style_root = "fg:#eb6f92 bg:#26233a"
 show_always = true
 disabled = false
 
 [os]
 # format = "[ 󰣇 ](fg:#e0def4 bg:#26233a)"
-format = "[  ](fg:#e0def4 bg:#26233a)"
+format = "[  ](fg:#e0def4vbg:#26233a)"
 # format = "[  ](fg:#cdd6f4 bg:#313244)"
 disabled = false
 [os.symbols]
@@ -104,10 +102,10 @@ format = "$ram_pct"
 
 [status]
 disabled = false
-symbol = "[✘ ](fg:#f38ba8 bg:#313244)"
-success_symbol = "[✔ ](fg:#a6e3a1 bg:#313244)"
+symbol = "[✘ ](fg:#eb6f92 bg:#26233a)"
+success_symbol = "[✔ ](fg:#31748f bg:#26233a)"
 format = "[$symbol$status]($style)"
-style = "fg:#cbb6f4 bg:#313244"
+style = "fg:#e0def4 bg:#26233a"
 
 [container]
 disabled = false

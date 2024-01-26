@@ -214,11 +214,11 @@ alias please='sudo'
 alias tb='nc termbin.com 9999'
 
 # Starship
-# function starship_transient_prompt_func
-#   starship module character
-# end
-# starship init fish | source
-# enable_transience
+function starship_transient_prompt_func
+  starship module character
+end
+starship init fish | source
+enable_transience
 
 # zoxide
 zoxide init fish | source
