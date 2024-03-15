@@ -106,6 +106,10 @@ function copy
     end
 end
 
+# EDITOR & VISUAL
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+
 #########################
 # Plugin configurations #
 #########################
