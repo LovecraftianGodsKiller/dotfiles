@@ -155,10 +155,10 @@ alias cleanup='pacman -S -Rns $(pacman -Qtdq)'	# remove orphaned packages (orpha
 alias rmd='rm --recursive --force --verbose'
 
 # Replace ls with exa
-alias l='eza -alFh --color=always --group-directories-first --icons'
-alias ls='eza -alFh --color=always --group-directories-first --icons'
-alias lt='eza -alFhT --color=always --group-directories-first --icons'
-alias lst='eza -alFhT --color=always --group-directories-first --icons'
+alias l='eza -alh --classify=always --color=always --group-directories-first --icons'
+alias ls='eza -alh --classify=always --color=always --group-directories-first --icons'
+alias lt='eza -alhT --classify=always --color=always --group-directories-first --icons'
+alias lst='eza -alhT --classify=always --color=always --group-directories-first --icons'
 # alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
 # alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs
 # alias ll='eza -l --color=always --group-directories-first --icons'  # long format
