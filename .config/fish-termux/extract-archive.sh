@@ -16,6 +16,7 @@
       *.deb)       ar x $1      ;;
       *.tar.xz)    tar xf $1    ;;
       *.tar.zst)   tar xf $1    ;;
+      *.rar)       unrar $1     ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
