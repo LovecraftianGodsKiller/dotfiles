@@ -320,5 +320,3 @@ export PATH=$PATH:/home/kirb/.spicetify
 export PATH=$PATH:/home/kirb/.local/bin
 
 export XDG_CONFIG_HOME="${HOME}/.config"
-
-export $XDG_SESSION_TYPE=wayland
