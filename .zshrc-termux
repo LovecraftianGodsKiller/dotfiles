@@ -165,7 +165,7 @@ alias vim='nvim'
 
 ### Aliases ###
 # Uncategorized
-alias c='clear && neofetch'
+alias c='clear && fastfetch'
 alias ca='clear'
 alias reb='reboot'
 alias sreb='sudo reboot'
