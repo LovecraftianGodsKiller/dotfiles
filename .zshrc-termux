@@ -180,6 +180,11 @@ alias da='+%Y-%m-%d %A %T %Z'
 alias a2c='aria2c'
 alias ac='aria2c'
 
+# git
+alias clone='git clone'
+alias commit='git commit'
+alias push='git push'
+
 # Changing directories
 alias cddown='cd /home/kirb/Downloads'
 alias cddoc='cd /home/kirb/Documents'
