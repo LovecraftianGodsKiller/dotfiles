@@ -1,4 +1,4 @@
-﻿## Source from conf.d before our fish config
+## Source from conf.d before our fish config
 source $HOME/.config/fish/conf.d/done.fish
 
 ## Set values
@@ -209,12 +209,6 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
-# Help people new to Arch
-alias apt='man pacman'
-alias apt-get='man pacman'
-alias please='sudo'
-alias tb='nc termbin.com 9999'
 
 # Starship
 function starship_transient_prompt_func

@@ -1,4 +1,4 @@
-﻿## Source from conf.d before our fish config
+## Source from conf.d before our fish config
 source $HOME/.config/fish/conf.d/done.fish
 
 ## Set values
@@ -148,6 +148,8 @@ alias pacre='sudo pacman -Rns'				# remove package, all dependencies and its con
 alias parre='paru -Rns --skipreview'			# remove package, all dependecnies and its configuration files
 alias pacss='pacman -Ss'				# search repos for package
 alias parss='paru -Ss --skipreview'			# search aur for package
+alias pacsy='sudo pacman -Sy'
+alias pacsyu='sudo pacman -Syu'
 alias parsua='paru -Sua --skipreview'			# update only aur packages
 alias aurup='paru -Sua --skipreview'			# update only aur packages
 alias pacscc='sudo pacman -Scc'				# clean standard package cache
@@ -209,12 +211,6 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
-# Help people new to Arch
-alias apt='man pacman'
-alias apt-get='man pacman'
-alias please='sudo'
-alias tb='nc termbin.com 9999'
 
 # Starship
 function starship_transient_prompt_func

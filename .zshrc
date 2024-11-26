@@ -1,4 +1,4 @@
-neofetch
+fastfetch
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -165,16 +165,11 @@ alias vim='nvim'
 
 ### Aliases ###
 # Uncategorized
-alias c='clear && neofetch'
+alias c='clear && fastfetch'
 alias ca='clear'
-alias reb='reboot'
-alias sreb='sudo reboot'
-alias sureb='sudo reboot'
-alias poff='poweroff'
-alias spoff='sudo poweroff'
-alias supoff='sudo poweroff'
-alias nf='neofetch'
-alias clone='git clone'
+alias reb='sudo reboot'
+alias poff='sudo poweroff'
+alias ff='fastfetch'
 alias dbox='distrobox'
 alias da='+%Y-%m-%d %A %T %Z'
 alias a2c='aria2c'
@@ -194,14 +189,15 @@ alias .....='cd ../../../..'
 alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Changing 'ls' to 'lsd'
-alias l='eza -alFh --color=always --group-directories-first --icons' # my preferred listing
-alias ls='eza -alFh --color=always --group-directories-first --icons' # my preferred listing
-alias lt='eza -alFhT --color=always --group-directories-first --icons' # my preferred listing
-alias lst='eza -alFhT --color=always --group-directories-first --icons' # my preferred listing
-# alias la='lsd -a --color=always --group-directories-first'  # all files and dirs
-# alias ll='lsd -l --color=always --group-directories-first'  # long format
-# alias lt='lsd -alFh --color=always --group-directories-first --tree --header --hyperlink auto' # tree listing
-# alias l.='lsd -a | egrep "^\."'
+alias l='eza -alh --classify=always --color=always --group-directories-first --icons'    # my preferred listing
+alias ls='eza -alh --classify=always --color=always --group-directories-first --icons'   # my preferred listing
+alias lt='eza -alhT --classify=always --color=always --group-directories-first --icons'  # my preferred tree listing
+alias lst='eza -alhT --classify=always --color=always --group-directories-first --icons' # my preferred tree listing
+
+# git
+alias clone='git clone'
+alias commit='git commit'
+alias push='git push'
 
 # Pacman and Yay
 alias pacin='sudo pacman -S'                     # install package(s) from repos
@@ -227,14 +223,36 @@ alias parusua='paru -Sua --skipreview'           # update only AUR pkgs (paru)
 alias yaysua='paru -Sua --skipreview'            # update only AUR pkgs (paru)
 alias pacsearch='pacman -Ss'
 alias parsearch='paru -Ss'
+alias pacss='pacman -Ss'
+alias parss='paru -Ss'
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages/remove unused dependencies
 alias paccache='sudo pacman -Scc'                # clean standard pkg cache
 alias parcache='paru -Scc'                       # clean standard and aur pkg cahce
 alias parucache='paru -Scc'                      # clean standard and aur pkg cache
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 
+# dnf (fedora and fedora based package manager)
+alias dnfin='sudo dnf install'
+alias din='sudo dnf install'
+alias dnfre='sudo dnf remove'
+alias dre='sudo dnf remove'
+alias dnfup='sudo dnf update'
+alias dnfupd='sudo dnf update'
+alias dup='sudo dnf update'
+alias dupd='sudo dnf update'
+alias dnfsysup='sudo dnf distro-sync'
+alias dsu='sudo dnf distro-sync'
+alias dds='sudo dnf distro-sync'
+alias dnfclean='sudo dnf clean'
+alias dauto='sudo dnf autoremove'
+alias dautoremove='sudo dnf autoremove'
+alias dsearch='sudo dnf search'
+
 # fix obvious typos
 alias cd..='cd ..'
+
+# kitty terminal
+alias icat='kitten icat'
 
 # yt-dlp
 alias yta-aac='yt-dlp --extract-audio --audio-format aac'
@@ -254,6 +272,25 @@ alias editwaybar='nvim $HOME/.config/waybar/config'         # edit waybar config
 
 # get fastes mirrors
 alias mirror='sudo reflector --country US --connection-timeout 60 --download-timeout 60 --fastest 10 --latest 10 --number 10 --verbose --save /etc/pacman.d/mirrorlist '
+
+# Make archive
+alias mktar='tar -cvf'
+alias mkbz2='tar -cvjf'
+alias mkgz='tar -cvzf'
+alias untar='tar -xvf'
+alias unbz2='tar -xvjf'
+
+# Android adb stuff
+alias shizuku-start='adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.api'
+alias start-shizuku='adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.api'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+
 
 # Termux
 alias pkgin='pkg install'
@@ -315,3 +352,5 @@ export PATH=$PATH:/home/kirb/.local/bin
 export XDG_CONFIG_HOME="${HOME}/.config"
 
 export $XDG_SESSION_TYPE=wayland
+
+eval "$(zoxide init zsh)"
