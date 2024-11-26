@@ -1,4 +1,4 @@
-neofetch
+fastfetch
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -173,7 +173,7 @@ alias sureb='sudo reboot'
 alias poff='poweroff'
 alias spoff='sudo poweroff'
 alias supoff='sudo poweroff'
-alias nf='neofetch'
+alias ff='neofetch'
 alias clone='git clone'
 alias dbox='distrobox'
 alias da='+%Y-%m-%d %A %T %Z'
@@ -194,10 +194,10 @@ alias .....='cd ../../../..'
 alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Changing 'ls' to 'lsd'
-alias l='eza -alFh --color=always --group-directories-first --icons' # my preferred listing
-alias ls='eza -alFh --color=always --group-directories-first --icons' # my preferred listing
-alias lt='eza -alFhT --color=always --group-directories-first --icons' # my preferred listing
-alias lst='eza -alFhT --color=always --group-directories-first --icons' # my preferred listing
+alias l='eza -alh --classify=always --color=always --group-directories-first --icons' # my preferred listing
+alias ls='eza -alh --classify=always --color=always --group-directories-first --icons' # my preferred listing
+alias lt='eza -alhT --classify=always --color=always --group-directories-first --icons' # my preferred listing
+alias lst='eza -alhT --classify=always --color=always --group-directories-first --icons' # my preferred listing
 # alias la='lsd -a --color=always --group-directories-first'  # all files and dirs
 # alias ll='lsd -l --color=always --group-directories-first'  # long format
 # alias lt='lsd -alFh --color=always --group-directories-first --tree --header --hyperlink auto' # tree listing
@@ -209,9 +209,9 @@ alias sps='pacman -S'                       # install package(s) from repos
 alias parin='paru -S --skipreview'               # isntall package(s) from aur (paru)
 alias paruin='paru -S --skipreview'              # install package(s) from aur (paru)
 alias yayin='yay -S'                             # install package(S) from aur (yay)
-alias pacre='pacman -R'                     # remove package(s) from repos or aur
+alias pacre='pacman -Rns'                     # remove package(s) from repos or aur
 alias spr='pacman -R'                       # remove package(s) from repos or aur
-alias parre='paru -R --skipreview'               # remove package(s) from repos or aur (paru)
+alias parre='paru -Rns --skipreview'               # remove package(s) from repos or aur (paru)
 alias parure='paru -R --skipreview'              # remove package(s) from repos or aur (paru) 
 alias yayre='yay -R'                             # remove package(S) from repos or aur (yay)
 alias pacres='pacman -Rs'                   # remove package(s) with all dependencies
@@ -231,6 +231,8 @@ alias cleanup='pacman -Rns $(pacman -Qtdq)' # remove orphaned packages/remove un
 alias paccache='pacman -Scc'                # clean standard pkg cache
 alias parcache='paru -Scc'                       # clean standard and aur pkg cahce
 alias parucache='paru -Scc'                      # clean standard and aur pkg cache
+alias pacscc='pacman -Scc'
+alias parscc='paru -Scc'
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 
 # fix obvious typos
