@@ -3,7 +3,7 @@
 #  $character
 # """
 format = """
-$username$directory[](fg:#313244 bg:#1e1e2e)$fill[](fg:#313244 bg:#1e1e2e)[ ](bg:#313244)$status[ ](bg:#313244)$git_branch$git_status$time
+$username$directory[](fg:#313244)$fill[](fg:#313244)[ ](bg:#313244)$status[ ](bg:#313244)$git_branch$git_status$time
 $character
 """
 
