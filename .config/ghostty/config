@@ -1,0 +1,36 @@
+gtk-titlebar = false
+gtk-adwaita = false
+shell-integration = fish
+shell-integration-features = true
+
+# cursor styling
+cursor-style = bar
+cursor-click-to-move = true
+
+# font options
+font-family = JetBrainsMono Nerd Font
+font-size = 10
+
+# general theming
+theme = catppuccin-mocha
+background-opacity = 0.8
+
+# misc
+link-url = true
+mouse-shift-capture = never
+copy-on-select = true
+desktop-notifications = true
+
+# keybindings
+keybind = shift+ctrl+r=reload_config
+
+keybind = shift+ctrl+h=new_split:left
+keybind = shift+ctrl+j=new_split:down
+keybind = shift+ctrl+k=new_split:up
+keybind = shift+ctrl+l=new_split:right
+
+keybind = global:all:ctrl+shift+c=copy_to_clipboard
+keybind = global:all:ctrl+shift+v=paste_from_clipboard
+
+# keybind = ctrl+shift++=increase_font_size
+# keybind = ctrl+shift+-=decrease_font_size
