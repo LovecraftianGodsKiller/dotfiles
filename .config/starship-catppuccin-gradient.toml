@@ -1,0 +1,88 @@
+# format = """
+# $username$directory$fill$git_branch$git_status$memory_usage$time[]()$shell
+#  $character
+# """
+format = """
+$username$directory$fill$time$git_branch$git_status$memory_usage$shell
+ $character
+"""
+
+add_newline = true
+
+scan_timeout = 50
+
+command_timeout = 5000
+
+[character]
+# success_symbol = "[](fg:#50fa7b bold)"
+# success_symbol = "[❯](fg:#50fa7b bold)"
+success_symbol = "[](fg:#50fa7b bold)"
+# error_symbol = "[](fg:#ff5555 bold)"
+# error_symbol = "[❯](fg:#ff5555 bold)"
+ error_symbol = "[](fg:#ff5555 bold)"
+
+[fill]
+symbol = " "
+disabled = false
+
+[time]
+format = '[](fg:#cdd6f4 bg:#1e1e2e)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#6c7086 bg:#a6adc8)[](fg:#313244 bg:#6c7086)[ \[$time\] ](fg:#cdd6f4 bg:#313244)'
+utc_time_offset = "local"
+time_format = "%T"
+disabled = false
+time_range = "-"
+
+[git_branch]
+# format = "[](fg:#cdd6f4 bg:#313244)[$symbol](fg:#cdd6f4 bg:#313244)[$branch](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#313244)"
+format = "[ ](fg:#cdd6f4 bg:#313244)[$symbol](fg:#cdd6f4 bg:#313244)[$branch](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#313244)"
+symbol = " "
+
+[shell]
+bash_indicator = "[](fg:#6c7086 bg:#313244)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[BSH](fg:#313244 bg:#cdd6f4)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)[  ](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+zsh_indicator = "[](fg:#6c7086 bg:#313244)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[ZSH](fg:#313244 bg:#cdd6f4)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)[  ](fg:#cdd6[f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+nu_indicator = "[](fg:#6c7086 bg:#313244)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[NSH](fg:#313244 bg:#cdd6f4)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)[  ](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+fish_indicator = "[](fg:#6c7086 bg:#313244)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[FSH](fg:#313244 bg:#cdd6f4)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)[  ](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+elvish_indicator = "[](fg:#6c7086 bg:#313244)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[ESH](fg:#313244 bg:#cdd6f4)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)[  ](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+xonsh_indicator = "[](fg:#6c7086 bg:#313244)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[XSH](fg:#313244 bg:#cdd6f4)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)[  ](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+unknown_indicator = "[](fg:#fff1cf bg:#6f6565)[???-MODE][](fg:#6f6565)"
+style = "fg:#fff1cf bg:#6f6565"
+disabled = false
+
+[directory]
+# format = "[ 󰣇 ](fg:#fab387 bg:#313244)[ ](fg:#cdd6f4 bg:#313244)[$path ]($style)[$read_only](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+format = "[  ](fg:#cdd6f4 bg:#313244)[ ](fg:#cdd6f4 bg:#313244)[$path ]($style)[$read_only](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+# format = "[ _ ](fg:#cdd9f4 bg:#313244)[ ](fg:#cdd6f4 bg:#313244)[$path ]($style)[$read_only](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#6c7086)[](fg:#6c7086 bg:#a6adc8)[](fg:#a6adc8 bg:#cdd6f4)[](fg:#cdd6f4 bg:#1e1e2e)"
+style = "fg:#cdd6f4 bg:#313244"
+truncation_symbol = "…/"
+truncate_to_repo = false
+truncation_length = 100
+# home_symbol = "  "
+home_symbol = "~"
+
+[git_status]
+# format = '([\[$all_status $ahead_behind \] ](fg:#cdd6f4 bg:#313244))'
+format = '([\[$modified $untracked\] ](fg:#cdd6f4 bg:#313244))'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}'
+behind = '⇣${count}'
+modified = '!${count}'
+untracked = '?${count}'
+
+[username]
+format = "[](fg:#6c7086 bg:#1e1e2e)[](fg:#a6adc8 bg:#6c7086)[](fg:#cdd6f4 bg:#a6adc8)[ ](fg:#1e1e2e bg:#cdd6f4 bold)[](fg:#cdd6f4 bg:#a6adc8)[](fg:#a6adc8 bg:#6c7086)[](fg:#6c7086 bg:#313244)"
+show_always = true
+disabled = false
+
+[os]
+# format = "[ 󰣇 ](fg:#cdd6f4 bg:#313244)"
+format = "[  ](fg:#cdd6f4 bg:#313244)"
+# format = "[  ](fg:#cdd6f4 bg:#313244)"
+disabled = false
+[os.symbols]
+Arch = " 󰣇 "
+Android = "  "
+Pop = "  "
+
+[memory_usage]
+disabled = false
+format = "$ram_pct"
