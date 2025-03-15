@@ -171,6 +171,19 @@ alias lst='eza -alhT --classify=always --color=always --group-directories-first 
 # alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 # alias l.="eza -a | egrep '^\.'"                                     # show only dotfiles
 
+# Android: adb and fastboot
+alias fb='fastboot'
+alias fb-init='fastboot flash init_boot'
+alias fbinit='fastboot flash init_boot'
+alias fb-reb='fastboot reboot'
+alias fbreb='fastboot reboot'
+alias fb-rec='fastboot reboot recovery'
+alias fbrec='fastboot reboot recovery'
+alias adb-bl='adb reboot bootloader'
+alias adbbl='adb reboot bootloader'
+alias adb-sl='adb sideload'
+alias adbsl='adb sideload'
+
 # Common use
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
