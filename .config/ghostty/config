@@ -12,7 +12,7 @@ font-family = JetBrainsMono Nerd Font
 font-size = 10
 
 # general theming
-theme = catppuccin-mocha
+theme = Eldritch
 background-opacity = 0.8
 
 # misc
