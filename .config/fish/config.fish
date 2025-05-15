@@ -163,6 +163,7 @@ alias rmd='rm --recursive --force --verbose'
 # Replace ls with exa
 alias l='eza -alh --classify=always --color=always --group-directories-first --icons'
 alias ls='eza -alh --classify=always --color=always --group-directories-first --icons'
+alias lsd='eza -alhD --classify=always --color=always --group-directories-first --icons'
 alias lt='eza -alhT --classify=always --color=always --group-directories-first --icons'
 alias lst='eza -alhT --classify=always --color=always --group-directories-first --icons'
 # alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
