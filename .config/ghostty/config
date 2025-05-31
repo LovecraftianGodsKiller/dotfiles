@@ -2,6 +2,7 @@ gtk-titlebar = false
 gtk-adwaita = false
 shell-integration = fish
 shell-integration-features = true
+hide-mouse-while-typing = true
 
 # cursor styling
 cursor-style = bar
