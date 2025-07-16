@@ -123,6 +123,8 @@ set -gx VISUAL nvim
 ###############
 
 # misc
+alias cp='advcp'
+alias mv='advmv'
 alias poff='sudo poweroff'
 alias reb='sudo reboot'
 alias c='clear && fastfetch'
@@ -132,6 +134,8 @@ alias dbox-export='distrobox-export'
 alias ac='aria2c'
 alias ff='fastfetch'
 alias ex='$HOME/.config/fish/extract-archive.sh'
+alias tmod="__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=Nvidia_only __GLX_VENDOR_LIBRARY_NAME=nvidia /home/kirb/.local/share/Steam/steamapps/common/tModLoader/start-tModLoader.sh"
+alias gungeon="/home/kirb/.applications/launch-gungeon.sh"
 
 # kitty terminal
 alias icat='kitten icat'
@@ -245,3 +249,5 @@ enable_transience
 
 # zoxide
 zoxide init fish | source
+
+fish_add_path /home/kirb/.spicetify
