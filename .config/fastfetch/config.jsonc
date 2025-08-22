@@ -1,115 +1,132 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-    "type": "kitty-direct",
-    "source": "~/.config/fastfetch/eldritch.png",
-    "padding": {
-      "right": 10,
-      "top": 6
-    }
-  },
-  "general": {
-    "multithreading": true
-  },
-  "display": {
-    "separator": "➜   "
-  },
-  "modules": [
-    "break",
-    {
-      "type": "title",
-      "format": "                                {6}{7}{8}"
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        //"type": "file",
+        //"source": "~/.config/fastfetch/cat.txt",
+        //"color": {
+        //    "1": "cyan",
+        //    "2": "red",
+        //    "3": "yellow",
+        //    "4": "blue",
+        //    "5": "green"
+        //}
+        "source": "~/.config/fastfetch/cachppuccin.png",
+        "type": "kitty",
+        "height": 16,
+        "width": 34,
+        "padding": {
+            "top": 4,
+           "left": 4
+        }
     },
-    "break",
-    {
-      "type": "custom",
-      "format": "┌──────────────────────────────────────────────────────────────────────────────┐" // `\u001b` is `\033`, or `\e`
-    },
-    "break",
-    {
-      "key": "     OS           ",
-      "keyColor": "green",
-      "type": "os"
-    },
-    {
-      "key": "    󰌢 Machine      ",
-      "keyColor": "cyan",
-      "type": "host"
-    },
-    {
-      "key": "     Kernel       ",
-      "keyColor": "blue",
-      "type": "kernel"
-    },
-    {
-      "key": "    󰅐 Uptime       ",
-      "keyColor": "green",
-      "type": "uptime"
-    },
-    {
-      "key": "     Packages     ",
-      "keyColor": "cyan",
-      "type": "packages"
-    },
-    {
-      "key": "     WM           ",
-      "keyColor": "blue",
-      "type": "wm"
-    },
-    {
-      "key": "     Shell        ",
-      "keyColor": "green",
-      "type": "shell"
-    },
-    {
-      "key": "     Terminal     ",
-      "keyColor": "cyan",
-      "type": "terminal"
-    },
-    {
-      "key": "     Font         ",
-      "keyColor": "blue",
-      "type": "terminalfont"
-    },
-    {
-      "key": "    󰻠 CPU          ",
-      "keyColor": "green",
-      "type": "cpu"
-    },
-    {
-      "key": "    󰍛 GPU          ",
-      "keyColor": "cyan",
-      "type": "gpu"
-    },
-    {
-      "key": "    󰑭 Memory       ",
-      "keyColor": "blue",
-      "type": "memory"
-    },
-    {
-      "key": "     Wifi         ",
-      "keyColor": "green",
-      "type": "wifi"
-    },
-    {
-      "key": "    󰩟 Local IP     ",
-      "keyColor": "cyan",
-      "type": "localip",
-      "compact": true
-    },
-    "break",
-    {
-      "type": "custom",
-      "format": "└──────────────────────────────────────────────────────────────────────────────┘" // `\u001b` is `\033`, or `\e`
-    },
-    "break",
-    {
-      "type": "colors",
-      "paddingLeft": 34,
-      "symbol": "circle",
-      "block": {
-        "width": 10
-      }
-    }
-  ]
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "┌────────────────────── Hardware ──────────────────────┐",
+            "outputColor": "red"
+        },
+        {
+            "type": "title",
+            "key": " PC",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├󰍛CPU",
+            "showPeCoreCount": true,
+            "format": "{1}",
+            "keyColor": "green"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰍛 GPU",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "└ └󰍛 Memory",
+            "keyColor": "green"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────────────────┘",
+            "outputColor": "red"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "┌────────────────────── Software ──────────────────────┐",
+            "outputColor": "red"
+        },
+        {
+            "type": "os",
+            "key": " OS",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├ Kernel",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├󰏖 Packages",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "│ ├ Shell",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "command",
+            "key": "│ ├ OS Age",
+            "keyColor": "yellow",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "└ └ Uptime",
+            "keyColor": "yellow"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " DE",
+            "keyColor": "blue"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├ LM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├ WM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰍛 GPU Driver",
+            "format": "{3}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wmtheme",
+            "key": "└ └󰉼 Theme",
+            "keyColor": "blue"
+        },
+
+        {
+            "type": "custom",
+            "format": "└────────────────────────────────────────────────────┘",
+            "outputColor": "red"
+        },
+        {
+            "type": "custom",
+            "format": "               \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+        },
+        "break",
+    ]
 }
