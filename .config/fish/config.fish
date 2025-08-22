@@ -154,6 +154,7 @@ alias pacss='pacman -Ss'				# search repos for package
 alias parss='paru -Ss --skipreview'			# search aur for package
 alias pacsy='sudo pacman -Sy'
 alias pacsyu='sudo pacman -Syu'
+alias parsyu='paru -Syu --skipreview'
 alias parsua='paru -Sua --skipreview'			# update only aur packages
 alias aurup='paru -Sua --skipreview'			# update only aur packages
 alias pacscc='sudo pacman -Scc'				# clean standard package cache
